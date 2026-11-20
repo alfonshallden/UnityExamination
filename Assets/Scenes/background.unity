@@ -176,8 +176,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ur a kid trying to jump over obstacles to get to the goal because your
-    mom told u not to
+  m_text: ur a kid trying to collect the white circles while avoiding the big mean
+    red circle. you are only allowed to moonwalk upside down.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
