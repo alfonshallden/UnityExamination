@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 763174216}
   - component: {fileID: 763174220}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: magnetic triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5716,7 +5716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformerMovement
   maxSpeed: 10
-  jumpForce: 20
+  jumpForce: 10
   spriteRenderer: {fileID: 1187555688}
   animator: {fileID: 0}
 --- !u!70 &1187555685
@@ -6108,7 +6108,7 @@ GameObject:
   - component: {fileID: 1258212845}
   - component: {fileID: 1258212846}
   m_Layer: 0
-  m_Name: Isometric Diamond
+  m_Name: diamond of joy and music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7005,7 +7005,7 @@ GameObject:
   - component: {fileID: 1957196364}
   - component: {fileID: 1957196363}
   m_Layer: 5
-  m_Name: Button
+  m_Name: useless button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
