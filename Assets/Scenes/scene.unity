@@ -577,6 +577,7 @@ GameObject:
   - component: {fileID: 763174218}
   - component: {fileID: 763174217}
   - component: {fileID: 763174216}
+  - component: {fileID: 763174220}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -729,6 +730,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &763174220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763174215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4b4d045947df140bdebaeba9467f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnityEventOnEnabled
+  customEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1187555688}
+        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+        m_MethodName: set_flipY
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &766482275
 GameObject:
   m_ObjectHideFlags: 0
@@ -5666,6 +5694,8 @@ GameObject:
   - component: {fileID: 1187555685}
   - component: {fileID: 1187555684}
   - component: {fileID: 1187555690}
+  - component: {fileID: 1187555691}
+  - component: {fileID: 1187555692}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -5686,7 +5716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformerMovement
   maxSpeed: 10
-  jumpForce: 10
+  jumpForce: 20
   spriteRenderer: {fileID: 1187555688}
   animator: {fileID: 0}
 --- !u!70 &1187555685
@@ -6006,6 +6036,64 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1187555691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187555683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681b10b675a8faf44bef53d23c7de758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiateOnEvent
+  objectToInstantiate: {fileID: 4115894791276174932, guid: 3b2c765366bcd604fbd7d2b8829b59fc, type: 3}
+  instantiationTransform: {fileID: 97279557}
+  instanceLifeTime: 0
+--- !u!114 &1187555692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187555683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930b89520da39014380f636df4f1d03b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnityEventOnTrigger
+  tagToActivate: Pickup
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1654931695}
+        m_TargetAssemblyTypeName: UICounter, Assembly-CSharp
+        m_MethodName: AddToCounter
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1187555691}
+        m_TargetAssemblyTypeName: InstantiateOnEvent, Assembly-CSharp
+        m_MethodName: InstantiatePrefab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1519483410
 GameObject:
   m_ObjectHideFlags: 0
@@ -6929,10 +7017,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickup
       objectReference: {fileID: 0}
-    - target: {fileID: 6266176664587643392, guid: 3b2c765366bcd604fbd7d2b8829b59fc, type: 3}
-      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+    - target: {fileID: 0}
+      propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1654931695}
+      objectReference: {fileID: 1187555686}
+    - target: {fileID: 0}
+      propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_density
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: customEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.CircleCollider2D, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
